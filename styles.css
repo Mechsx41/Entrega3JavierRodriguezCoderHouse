@@ -146,6 +146,41 @@ a {
       color: var(--font-color-sub);
     }
     
+    .card-btnEliminar{
+      height: 35px;
+      background: rgb(234, 89, 89);
+      border: 2px solid var(--main-color);
+      border-radius: 5px;
+      padding: 0 15px;
+      transition: all 0.3s;
+    }
+        
+    .card-btnEliminar svg {
+      width: 100%;
+      height: 100%;
+      fill: rgb(230, 218, 218);
+     
+      transition: all 0.3s;
+    }
+  
+    .card-img:hover {
+      transform: translateY(-3px);
+   
+    }
+    
+    .card-btnEliminar:hover {
+      border: 2px solid black;
+      cursor: pointer;
+    }
+    
+    .card-btnEliminar:hover svg {
+      fill: rgb(217, 184, 184);
+    }
+    
+    .card-btnEliminar:active {
+      transform: translateY(3px);
+    }
+
     .card-btn {
       height: 35px;
       background: var(--bg-color);
