@@ -40,17 +40,29 @@
             .then(response => response.json())
             .then(data => {
                 const item = data.find(producto => producto.id === id);
-                const itemConIdUnico = { ...item, uniqueId: Date.now() + Math.random().toString(36).substr(2, 9) }; 
-                carrito.push(itemConIdUnico);
-                localStorage.setItem('carrito', JSON.stringify(carrito)); 
+                const itemExistente = carrito.find(producto => producto.id === id);
+    
+                if (itemExistente) {
+                    // Si el producto ya existe en el carrito, incrementa la cantidad
+                    itemExistente.cantidad += 1;
+                } else {
+                    // Si no existe, agrega el producto con cantidad inicial 1
+                    const itemConCantidad = { ...item, cantidad: 1 };
+                    carrito.push(itemConCantidad);
+                }
+    
+                // Actualiza el carrito en el localStorage y el contador
+                localStorage.setItem('carrito', JSON.stringify(carrito));
                 actualizarContadorCarrito();
             });
     };
-
+    
     const actualizarContadorCarrito = () => {
+        const totalProductos = carrito.reduce((acumulador, producto) => acumulador + producto.cantidad, 0);
         const cartCount = document.getElementById('cart-count');
-        cartCount.textContent = carrito.length;
+        cartCount.textContent = totalProductos;
     };
+    
 
        const filtrarProductos = () => {
            const input = document.getElementById('input').value.toLowerCase();
