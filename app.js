@@ -110,7 +110,7 @@
     
     const mostrarNotificacion = () => {
         Toastify({
-            text: "This is a toast",
+            text: "Hola! Su pedido fue procesado exitosamente",
             duration: 3000,
             gravity: "top",
             position: "center",

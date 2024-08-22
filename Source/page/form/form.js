@@ -24,15 +24,12 @@ document.getElementById('pedidoForm').addEventListener('submit', async (e) => {
         });
 
         if (response.ok) { 
-            // Indicar que se debe mostrar la notificación en index.html
+           
             localStorage.setItem('mostrarNotificacion', 'true');
-            
-            // Borrar carrito y actualizar el contador
             localStorage.removeItem('carrito');
             actualizarContadorCarrito();
             document.getElementById('pedidoForm').reset();
 
-            // Redirigir al index.html
             window.location.href = '../../../index.html';
         } else {
             const errorData = await response.json();
