@@ -46,21 +46,5 @@
     "price":"900",
     "image":"https://samsungarsmb.vtexassets.com/arquivos/ids/165989-800-auto?v=638254216484270000&width=800&height=auto&aspect=true",
     "stock":5 
-},
-{
-    "id":7,
-    "title":"Acer Gamer",
-    "description":"NoteBook",
-    "price":"999",
-    "image":"https://logg.api.cygnus.market/static/logg/Global/Notebook_Gamer_Acer_Nitro_5_i5_11400H_GTX_1650_4GB_GDDR6_8GB_DDR4_512GB_NVMe_15.6_Win11H/c76ea3def0f249bcb23a275a17273545.webp",
-    "stock": 7
-},
-{
-    "id":8,
-    "title":"NoteBook HP 15",
-    "description":"NoteBook",
-    "price":"450",
-    "image":"https://ar-media.hptiendaenlinea.com/catalog/product/6/K/6K015LT-1_T1700171213.png",
-    "stock": 3
-    }
+}
 ]

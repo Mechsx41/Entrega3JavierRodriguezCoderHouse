@@ -5,7 +5,7 @@ body {
      sans-serif; 
      --font-sans-serif: 'Manrope'; 
     } 
-/* From Uiverse.io by mahbowal */ 
+
 .container {
     max-width: 350px;
     background: #f8f9fd;
@@ -102,4 +102,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+  }
+  .btnn{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    text-align: center;
+    justify-content: center;
   }

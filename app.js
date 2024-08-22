@@ -43,15 +43,12 @@
                 const itemExistente = carrito.find(producto => producto.id === id);
     
                 if (itemExistente) {
-                    // Si el producto ya existe en el carrito, incrementa la cantidad
                     itemExistente.cantidad += 1;
                 } else {
-                    // Si no existe, agrega el producto con cantidad inicial 1
                     const itemConCantidad = { ...item, cantidad: 1 };
                     carrito.push(itemConCantidad);
                 }
     
-                // Actualiza el carrito en el localStorage y el contador
                 localStorage.setItem('carrito', JSON.stringify(carrito));
                 actualizarContadorCarrito();
             });
@@ -89,4 +86,34 @@
         document.getElementById('input').addEventListener('input', filtrarProductos);
     });
         
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch("Source/Data/data.json")
+            .then(response => response.json())
+            .then(data => {
+                productos = data;
+                mostrarProductos(productos);
+            });
+    
+        const carritoGuardado = localStorage.getItem('carrito');
+        carrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
+        actualizarContadorCarrito();
+    
+        // Verificar si hay que mostrar la notificación
+        if (localStorage.getItem('mostrarNotificacion')) {
+            mostrarNotificacion();
+            localStorage.removeItem('mostrarNotificacion'); // Eliminar el indicador
+        }
+        
+        document.getElementById('input').addEventListener('input', filtrarProductos);
+    });
+    
+    const mostrarNotificacion = () => {
+        Toastify({
+            text: "This is a toast",
+            duration: 3000,
+            gravity: "top",
+            position: "center",
+        }).showToast();
+    };
     

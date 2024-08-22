@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', () => {
+    actualizarContadorCarrito();
+});
+
 document.getElementById('pedidoForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -5,7 +9,6 @@ document.getElementById('pedidoForm').addEventListener('submit', async (e) => {
     const apellido = document.getElementById('lastName').value;
     const telefono = document.getElementById('phoneNumber').value;
 
-    // Obtener datos del carrito desde el localStorage
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
     const pedido = { 
@@ -20,24 +23,30 @@ document.getElementById('pedidoForm').addEventListener('submit', async (e) => {
             body: JSON.stringify(pedido)
         });
 
-        if (response.ok) {
-            alert('Pedido enviado correctamente');
-
-            // Borra el localStorage solo si el pedido se ha guardado correctamente
+        if (response.ok) { 
+            // Indicar que se debe mostrar la notificación en index.html
+            localStorage.setItem('mostrarNotificacion', 'true');
+            
+            // Borrar carrito y actualizar el contador
             localStorage.removeItem('carrito');
             actualizarContadorCarrito();
             document.getElementById('pedidoForm').reset();
 
-            setTimeout(() => {
-                window.location.href = 'index.html'; // Redirige a la página de inicio después de un breve retraso
-            }, 2000);
+            // Redirigir al index.html
+            window.location.href = '../../../index.html';
         } else {
             const errorData = await response.json();
-            alert('Hubo un problema al enviar el pedido: ' + errorData.message);
+            alert("Hubo un problema al enviar el pedido: " + errorData.message);
         }
     } catch (error) {
         if (error.message === 'Failed to fetch') {
-            alert('Error de conexión: No se pudo conectar al servidor. Por favor, intente más tarde.');
+           alert("Error de conexión: No se pudo conectar al servidor. Por favor, intente más tarde.");
         } 
     }
 });
+
+function actualizarContadorCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const totalProductos = carrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+    document.getElementById('cart-count').textContent = totalProductos;
+}

@@ -18,10 +18,20 @@ document.addEventListener('DOMContentLoaded', () => {
         let totalPagar = 0;
 
         if (productosFiltrados.length === 0) {
-            // Mostrar mensaje si el carrito está vacío
             cardCarrito.innerHTML = '<p style="text-align: center;">Aún no hay productos en su carrito</p>';
             return;
         }
+
+        const resumenHeader = document.createElement('h5');
+        resumenHeader.textContent = "Resumen de compra";
+        cardResume.appendChild(resumenHeader);
+
+        const divider = document.createElement('hr');
+        cardResume.appendChild(divider);
+
+        const productosHeader = document.createElement('h5');
+        productosHeader.textContent = "Productos:";
+        cardResume.appendChild(productosHeader);
 
         productosFiltrados.forEach(item => {
             const article = document.createElement('article');
@@ -37,14 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h2 class="reset">${item.title}</h2>
                 <div><span>${item.description}</span></div>
                 <div><span>Cantidad: ${item.cantidad}</span></div>
-                <button class="card-btnEliminar" onclick="eliminarDelCarrito(${item.id})">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="img">
-                        <path d="m397.78 316h-205.13a15 15 0 0 1 -14.65-11.67l-34.54-150.48a15 15 0 0 1 14.62-18.36h274.27a15 15 0 0 1 14.65 18.36l-34.6 150.48a15 15 0 0 1 -14.62 11.67zm-193.19-30h181.25l27.67-120.48h-236.6z"></path>
-                        <path d="m222 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>
-                        <path d="m368.42 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>
-                        <path d="m158.08 165.49a15 15 0 0 1 -14.23-10.26l-25.71-77.23h-47.44a15 15 0 1 1 0-30h58.3a15 15 0 0 1 14.23 10.26l29.13 87.49a15 15 0 0 1 -14.23 19.74z"></path>
-                    </svg>
-                </button>
+                <button class="card-btnEliminar" onclick="eliminarDelCarrito(${item.id})">Eliminar</button>
             `;
 
             const articuleRightDiv = document.createElement('div');
@@ -77,14 +80,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const resumenDiv = document.createElement('div');
         resumenDiv.classList.add('resumen-compra');
         resumenDiv.innerHTML = `
-            <div>
-                <h5>Productos:</h5>
-                <h2>Total: $${totalPagar.toFixed(2)}</h2>
-                <div style="text-align: center;">
+            <h2>Total: $${totalPagar.toFixed(2)}</h2>
+            <div style="text-align: center;">
                 <a href="./form/form.html">
-                    <button>Comprar</button>
-                    </a>
-                </div>
+                    <button class="btnCompra">
+                     <svg viewBox="0 0 16 16" class="bi bi-cart-check" height="24" width="24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                      <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"></path>
+                      <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+                    </svg>
+                      <p class="text">Comprar</p>
+                    </button>
+                </a>
             </div>
         `;
         cardResume.appendChild(resumenDiv);

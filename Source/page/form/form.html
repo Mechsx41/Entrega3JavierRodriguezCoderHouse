@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="form.css">
     <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -55,12 +56,12 @@
                     class="inputform"
                     required
                 />
-                <input id="finalizar-compra" value="Finalizar compra" type="submit" class="login-button" />
+                <input onclick="mostrarNotificacion()" id="finalizar-compra" value="Finalizar compra" type="submit" class="login-button" />
             </form>
         </main>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="form.js"></script>
 </body>
-<script src="../../Cart.js"></script>
 </html>
