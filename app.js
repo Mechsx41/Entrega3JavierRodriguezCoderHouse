@@ -99,10 +99,9 @@
         carrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
         actualizarContadorCarrito();
     
-        // Verificar si hay que mostrar la notificación
         if (localStorage.getItem('mostrarNotificacion')) {
             mostrarNotificacion();
-            localStorage.removeItem('mostrarNotificacion'); // Eliminar el indicador
+            localStorage.removeItem('mostrarNotificacion');
         }
         
         document.getElementById('input').addEventListener('input', filtrarProductos);
