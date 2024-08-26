@@ -52,17 +52,14 @@ a {
     display: flex;
     gap: 15px;
 }
-.navbar img {
-    width: 27px;
-    height: 27px;
-}
+
 .ShoppingCard{
   margin-top: 5px;
 } 
   .card {
       --font-color: #323232;
       --font-color-sub: #666;
-      --bg-color: #ffffff;
+      --bg-color: #ffffff39;
       --main-color: #323232;
       --main-focus: #2d8cf0;
       width: 226px;
@@ -322,4 +319,12 @@ body {
 
 .btnCompra:hover svg path {
   fill: #181717;
+}
+.logo1 {
+  width: 27px;
+  height: 27px;
+}
+.logo {
+  width: 60px;
+  height: 35px;
 }

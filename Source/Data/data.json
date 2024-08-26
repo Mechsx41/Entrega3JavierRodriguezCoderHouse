@@ -1,50 +1,26 @@
 [
 {
     "id":1,
-    "title":"Samsung S24 Plus",
+    "title":"Helado de cono",
     "description":"Smartphone",
     "price":"600",
-    "image":"https://samsungar.vtexassets.com/arquivos/ids/193743/Samsung-143592091-ar-galaxy-s24-s928-sm-s928bztmaro-539291163--Download-Source-.png?v=638449301711430000",
+    "image":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$cono-combinado.png/200/200/original?country=ar",
     "stock": 3
 },
 {
     "id":2,
-    "title":"Iphone 15",
+    "title":"Sundae",
     "description":"Smartphone",
-    "price":"1500",
-    "image":"https://d28hi93gr697ol.cloudfront.net/9ef84dda-32dd-4016-7da3-1c0a824fffb4/img/Producto/2e40c331-8d55-1756-60c6-7181af752286/15-pro-max-6597661df28a3.png",
+    "price":"1000",
+    "image":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$sundae-chocolate.png/200/200/original?country=ar",
     "stock":5
 },
 {
     "id":3,
-    "title":"Motorola g22",
+    "title":"McFlurry",
     "description":"Smartphone",
-    "price":"1000",
-    "image":"https://motorolaes.vtexassets.com/arquivos/ids/158150/Moto-G22-White-product-shelf-EU-%E2%80%93-1iua9bqs8.png?v=637818557510500000",
+    "price":"1500",
+    "image":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$k7X0mKqj/200/200/original?country=ar",
     "stock":8
-},
-{
-    "id":4,
-    "title":"Redmi Note 13",
-    "description":"Smartphone",
-    "price":"250",
-    "image":"https://d28hi93gr697ol.cloudfront.net/9ef84dda-32dd-4016-7da3-1c0a824fffb4/img/Producto/15518619-bfc8-377d-6a3c-d3c821884b8a/Diseno-sin-titulo-64-65be63e2f14e1.png",
-    "stock": 20
-},
-{
-    "id":5,
-    "title":"RedmiBook 15",
-    "description":"NoteBook",
-    "price":"750",
-    "image":"https://i01.appmifile.com/webfile/globalimg/products/m/redmibook-15/overview05-img.png",
-    "stock": 10
-},
-{
-    "id":6,
-    "title":"Notebook Galaxy Book3",
-    "description":"NoteBook",
-    "price":"900",
-    "image":"https://samsungarsmb.vtexassets.com/arquivos/ids/165989-800-auto?v=638254216484270000&width=800&height=auto&aspect=true",
-    "stock":5 
 }
 ]
